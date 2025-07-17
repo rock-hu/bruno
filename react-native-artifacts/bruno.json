@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "react-native-artifacts",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,17 +1,13 @@
 meta {
   name: Get Scheduled Payments
   type: http
-  seq: 1
+  seq: 2
 }
 
 get {
-  url: {{baseUrl}}/accounts/:AccountId/scheduled-payments
+  url: {{baseUrl}}/scheduled-payments
   body: none
   auth: none
-}
-
-params:path {
-  AccountId: 
 }
 
 headers {

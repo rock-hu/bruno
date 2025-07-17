@@ -1,17 +1,13 @@
 meta {
   name: Get Parties
   type: http
-  seq: 1
+  seq: 3
 }
 
 get {
-  url: {{baseUrl}}/accounts/:AccountId/parties
+  url: {{baseUrl}}/party
   body: none
   auth: none
-}
-
-params:path {
-  AccountId: 
 }
 
 headers {

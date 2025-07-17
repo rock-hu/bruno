@@ -1,0 +1,16 @@
+meta {
+  name: Send an event notification
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/event-notifications
+  body: none
+  auth: none
+}
+
+headers {
+  x-fapi-financial-id: 
+  ~x-fapi-interaction-id: 
+}

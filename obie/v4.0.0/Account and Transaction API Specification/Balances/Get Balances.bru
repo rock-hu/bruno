@@ -1,17 +1,13 @@
 meta {
   name: Get Balances
   type: http
-  seq: 1
+  seq: 2
 }
 
 get {
-  url: {{baseUrl}}/accounts/:AccountId/balances
+  url: {{baseUrl}}/balances
   body: none
   auth: none
-}
-
-params:path {
-  AccountId: 
 }
 
 headers {

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Confirmation of Funds API Specification",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

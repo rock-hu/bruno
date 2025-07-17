@@ -1,0 +1,38 @@
+meta {
+  name: Create Funds Confirmation Consent
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/funds-confirmation-consents
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}
+
+body:json {
+  {
+    "Data": {
+      "ExpirationDateTime": "",
+      "DebtorAccount": {
+        "SchemeName": "",
+        "Identification": "",
+        "Name": "",
+        "SecondaryIdentification": "",
+        "Proxy": {
+          "Identification": "",
+          "Code": "",
+          "Type": ""
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 meta {
   name: Get Statements
   type: http
-  seq: 1
+  seq: 4
 }
 
 get {
-  url: {{baseUrl}}/accounts/:AccountId/statements
+  url: {{baseUrl}}/statements
   body: none
   auth: none
 }
@@ -13,10 +13,6 @@ get {
 params:query {
   ~fromStatementDateTime: 
   ~toStatementDateTime: 
-}
-
-params:path {
-  AccountId: 
 }
 
 headers {

@@ -1,0 +1,23 @@
+meta {
+  name: Get Funds Confirmation Consent
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/funds-confirmation-consents/:ConsentId
+  body: none
+  auth: none
+}
+
+params:path {
+  ConsentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

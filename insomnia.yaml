@@ -1,0 +1,357 @@
+type: collection.insomnia.rest/5.0
+name: react-native-artifacts
+meta:
+  id: wrk_952f41510d53424dbfbfc46935d3bb4b
+  created: 1749177821236
+  modified: 1749177905799
+  description: ""
+collection:
+  - url: https://react-native-artifacts.netlify.app/files.txt
+    name: files.txt
+    meta:
+      id: req_643c25af3fa74e83a0b85e67e803b403
+      created: 1749177821303
+      modified: 1749177874019
+      isPrivate: false
+      description: ""
+      sortKey: -1749177821303
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/movies/least/android/development/movies.container.bundle
+    name: /movies/least/android/development/movies.container.bundle
+    meta:
+      id: req_6a787a1209dd434eac95d3e73b9ec2eb
+      created: 1749177951348
+      modified: 1749177977517
+      isPrivate: false
+      description: ""
+      sortKey: -1749177951348
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/movies/least/android/development/mf-manifest.json
+    name: /movies/least/android/development/mf-manifest.json
+    meta:
+      id: req_8dd305e569494d2cba0521fd6a2ecb40
+      created: 1749178052043
+      modified: 1749178062940
+      isPrivate: false
+      description: ""
+      sortKey: -1749177886325.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/musics/least/android/development/musics.container.bundle
+    name: /musics/least/android/development/musics.container.bundle
+    meta:
+      id: req_3ddfe14f61594a389a217dad9630509f
+      created: 1749178086575
+      modified: 1749178109509
+      isPrivate: false
+      description: ""
+      sortKey: -1749177918836.75
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/musics/least/android/development/mf-manifest.json
+    name: /musics/least/android/development/mf-manifest.json
+    meta:
+      id: req_c73b61cbc2684d6b92d2578ea2797a85
+      created: 1749178118776
+      modified: 1749178122683
+      isPrivate: false
+      description: ""
+      sortKey: -1749177853814.25
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/outdoors/least/android/development/mf-manifest.json
+    name: /outdoors/least/android/development/mf-manifest.json
+    meta:
+      id: req_62288872d55648dd97f98083c2d2453f
+      created: 1749178144903
+      modified: 1749178147663
+      isPrivate: false
+      description: ""
+      sortKey: -1749177837558.625
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/outdoors/least/android/development/outdoors.container.bundle
+    name: /outdoors/least/android/development/outdoors.container.bundle
+    meta:
+      id: req_811ac4c3ded9495ca3006d2b92672438
+      created: 1749178167622
+      modified: 1749178174657
+      isPrivate: false
+      description: ""
+      sortKey: -1749177902581.125
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/sports/least/android/development/mf-manifest.json
+    name: /sports/least/android/development/mf-manifest.json
+    meta:
+      id: req_d10ad78842f24c1295f5ca5a27b8a33d
+      created: 1749178189457
+      modified: 1749178194347
+      isPrivate: false
+      description: ""
+      sortKey: -1749177829430.8125
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/sports/least/android/development/sports.container.bundle
+    name: /sports/least/android/development/sports.container.bundle
+    meta:
+      id: req_856f3c2c9a414af5a095cc9c23206730
+      created: 1749178204907
+      modified: 1749178211632
+      isPrivate: false
+      description: ""
+      sortKey: -1749177910708.9375
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/travels/least/android/development/mf-manifest.json
+    name: /travels/least/android/development/mf-manifest.json
+    meta:
+      id: req_20afb1b60b2142a1a7632c60aaa8825b
+      created: 1749178226740
+      modified: 1749178230412
+      isPrivate: false
+      description: ""
+      sortKey: -1749177825366.9062
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/artifacts/travels/least/android/development/travels.container.bundle
+    name: /travels/least/android/development/travels.container.bundle
+    meta:
+      id: req_be7b1b71983a4acba2d64fa9ae9463fc
+      created: 1749178243103
+      modified: 1749178252388
+      isPrivate: false
+      description: ""
+      sortKey: -1749177914772.8438
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/movies.jpeg
+    name: movies.jpeg
+    meta:
+      id: req_718e254c07514b2ca19c181c3e5f4027
+      created: 1749178276177
+      modified: 1749178340154
+      isPrivate: false
+      description: ""
+      sortKey: -1749177823334.9531
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/musics.jpeg
+    name: musics.jpeg
+    meta:
+      id: req_25a5a8aa6d3147bf953f1fe2125a55a8
+      created: 1749178289008
+      modified: 1749178363037
+      isPrivate: false
+      description: ""
+      sortKey: -1749177822318.9766
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/outdoors.jpeg
+    name: outdoors.jpeg
+    meta:
+      id: req_e6b7f02cfa9444b0a33c765fd3e8263c
+      created: 1749178299927
+      modified: 1749178374383
+      isPrivate: false
+      description: ""
+      sortKey: -1749177821810.9883
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/sports.jpg
+    name: sports.jpg
+    meta:
+      id: req_9632e32f234b4845ab6a8a3932f04703
+      created: 1749178310415
+      modified: 1749178383667
+      isPrivate: false
+      description: ""
+      sortKey: -1749177822064.9824
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://react-native-artifacts.netlify.app/travels.jpg
+    name: travels.jpg
+    meta:
+      id: req_900297302e2443bea7d706644579a33e
+      created: 1749178321200
+      modified: 1749178397552
+      isPrivate: false
+      description: ""
+      sortKey: -1749177821937.9854
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_19b7da2bdbead56ae3f805cac6dbb4f1dd4fc914
+    created: 1749177821250
+    modified: 1749177821250
+environments:
+  name: Base Environment
+  meta:
+    id: env_19b7da2bdbead56ae3f805cac6dbb4f1dd4fc914
+    created: 1749177821248
+    modified: 1749177821248
+    isPrivate: false

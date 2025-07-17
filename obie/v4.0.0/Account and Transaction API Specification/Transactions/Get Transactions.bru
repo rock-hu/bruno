@@ -1,11 +1,11 @@
 meta {
   name: Get Transactions
   type: http
-  seq: 2
+  seq: 3
 }
 
 get {
-  url: {{baseUrl}}/accounts/:AccountId/transactions
+  url: {{baseUrl}}/transactions
   body: none
   auth: none
 }
@@ -13,10 +13,6 @@ get {
 params:query {
   ~fromBookingDateTime: 
   ~toBookingDateTime: 
-}
-
-params:path {
-  AccountId: 
 }
 
 headers {

@@ -1,0 +1,130 @@
+{
+    "item": [
+        {
+            "name": "Event Notification",
+            "description": "",
+            "item": [
+                {
+                    "id": "d787def8-6370-4a13-a77d-debe567a50d5",
+                    "name": "Send an event notification",
+                    "request": {
+                        "name": "Send an event notification",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "event-notifications"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "disabled": false,
+                                "description": {
+                                    "content": "(Required) The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.",
+                                    "type": "text/plain"
+                                },
+                                "key": "x-fapi-financial-id",
+                                "value": "<string>"
+                            },
+                            {
+                                "disabled": false,
+                                "description": {
+                                    "content": "An RFC4122 UID used as a correlation id.",
+                                    "type": "text/plain"
+                                },
+                                "key": "x-fapi-interaction-id",
+                                "value": "<string>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/jwt"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "<string>"
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "c65993e1-63cc-4763-97b8-c461b79c3476",
+                            "name": "Accepted",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "event-notifications"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "disabled": false,
+                                        "description": {
+                                            "content": "(Required) The unique id of the ASPSP to which the request is issued. The unique id will be issued by OB.",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "x-fapi-financial-id",
+                                        "value": "<string>"
+                                    },
+                                    {
+                                        "disabled": false,
+                                        "description": {
+                                            "content": "An RFC4122 UID used as a correlation id.",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "x-fapi-interaction-id",
+                                        "value": "<string>"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/jwt"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "<string>"
+                                }
+                            },
+                            "status": "Accepted",
+                            "code": 202,
+                            "header": [],
+                            "cookie": [],
+                            "_postman_previewlanguage": "text"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "/open-banking/v3.1"
+        }
+    ],
+    "info": {
+        "_postman_id": "9da70e9b-ff66-4fec-a935-a4558ee08295",
+        "name": "Event Notification API Specification - TPP Endpoints",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "Swagger for Event Notification API Specification - TPP Endpoints\n\nContact Support:\n Name: Service Desk\n Email: ServiceDesk@openbanking.org.uk",
+            "type": "text/plain"
+        }
+    }
+}
