@@ -1,0 +1,23 @@
+meta {
+  name: Delete Event Subscription
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/event-subscriptions/:EventSubscriptionId
+  body: none
+  auth: none
+}
+
+params:path {
+  EventSubscriptionId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

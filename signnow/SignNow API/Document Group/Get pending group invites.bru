@@ -1,0 +1,21 @@
+meta {
+  name: Get pending group invites
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{url}}/documentgroup/{{document_group_id}}/groupinvite/{{invte_id}}/pendinginvites
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns all pending invite information as well as invites already signed for a group invite for the user that makes the call. 
+  
+  If the user making the call is the document owner, it will return pending invites for that user and ALL actions that have already been fulfilled.
+}

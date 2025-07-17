@@ -1,0 +1,40 @@
+meta {
+  name: Prefill smart fields
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/document/{{document_id}}/integration/object/smartfields
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "data": [
+      {
+        "field_name1": "value1"
+      },
+      {
+        "field_name2": "value2"
+      }
+    ],
+    "client_timestamp": "UTC time stamp"
+  }
+}
+
+docs {
+  Prefills smart fields.
+  
+  You can add Smart Fields to a template though web UI only. <br>
+  **Note:** names of Smart Fields are case sensetive.
+}

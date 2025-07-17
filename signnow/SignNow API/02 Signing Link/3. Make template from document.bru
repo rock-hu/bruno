@@ -1,0 +1,34 @@
+meta {
+  name: 3. Make template from document
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/template
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"document_id": "{{document_id}}",
+  	"document_name": "document"
+  }
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("template_id", jsonData.id);
+  test("Successful POST request", function () {
+      expect(res.getStatus()).to.be.oneOf([200,201,202]);
+  });
+}

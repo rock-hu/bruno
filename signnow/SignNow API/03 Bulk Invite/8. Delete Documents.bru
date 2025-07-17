@@ -1,0 +1,35 @@
+meta {
+  name: 8. Delete Documents
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{url}}/documents
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+  	{"unique_id": "{{document_id}}"},
+  	{"unique_id": "{{template_id}}"}
+  ]
+}
+
+script:post-response {
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include("success");
+  });
+  
+  bru.deleteEnvVar("document_id");
+  bru.deleteEnvVar("template_id");
+}

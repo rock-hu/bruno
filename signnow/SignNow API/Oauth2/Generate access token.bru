@@ -1,0 +1,31 @@
+meta {
+  name: Generate access token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/oauth2/token
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+}
+
+body:multipart-form {
+  username: {{user}}
+  password: {{password}}
+  grant_type: password
+  scope: *
+  expiration_time: 
+}
+
+docs {
+  Returns an `access_token`, its' type, scope, expiration time, and `refresh_token` for a user
+     
+     By deafult token expires in 30 days
+     
+     Check out other supported grant types [here](https://docs.signnow.com/authentication).
+}

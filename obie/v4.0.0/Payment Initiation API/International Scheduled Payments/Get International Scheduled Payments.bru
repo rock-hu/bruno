@@ -1,0 +1,23 @@
+meta {
+  name: Get International Scheduled Payments
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/international-scheduled-payments/:InternationalScheduledPaymentId
+  body: none
+  auth: none
+}
+
+params:path {
+  InternationalScheduledPaymentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

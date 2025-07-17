@@ -1,0 +1,25 @@
+meta {
+  name: Cancel field invite
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{url}}/field_invite/{{field_invite_id_2}}
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include("success");
+  });
+}

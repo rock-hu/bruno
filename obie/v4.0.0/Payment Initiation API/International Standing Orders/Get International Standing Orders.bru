@@ -1,0 +1,23 @@
+meta {
+  name: Get International Standing Orders
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/international-standing-orders/:InternationalStandingOrderPaymentId
+  body: none
+  auth: none
+}
+
+params:path {
+  InternationalStandingOrderPaymentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

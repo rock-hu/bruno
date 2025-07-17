@@ -1,0 +1,37 @@
+meta {
+  name: Create document group
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/documentgroup
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "document_ids":
+    [
+      "{{document_id}}",
+      "{{document1_id}}"
+    ],
+    "group_name": "Document Group 1"
+  }
+}
+
+docs {
+  Creates a document group from a list of document ids
+  
+  All documents:
+  
+  Must be owned by the person creating the document group.
+  Cannot be templates.
+  Cannot already be a part of another document group (delete document group first to add them).
+  At least one of the documents must have fields.
+}

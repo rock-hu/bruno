@@ -1,0 +1,20 @@
+meta {
+  name: Create Event Subscription
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/event-subscriptions
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: 
+  x-jws-signature: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

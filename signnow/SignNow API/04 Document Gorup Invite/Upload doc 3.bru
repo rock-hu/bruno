@@ -1,0 +1,29 @@
+meta {
+  name: Upload doc 3
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/document
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file()
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("document_id_3", jsonData.id);
+  
+}

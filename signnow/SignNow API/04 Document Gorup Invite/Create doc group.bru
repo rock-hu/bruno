@@ -1,0 +1,36 @@
+meta {
+  name: Create doc group
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{url}}/documentgroup
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+     "document_ids":[
+        "{{document_id_1}}",
+        "{{document_id_2}}",
+        "{{document_id_3}}"
+     ],
+     "group_name":"Group NameName123"
+  }
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("group_id", jsonData.id);
+  
+}

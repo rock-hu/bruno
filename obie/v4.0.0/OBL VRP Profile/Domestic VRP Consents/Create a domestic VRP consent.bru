@@ -1,0 +1,21 @@
+meta {
+  name: Create a domestic VRP consent
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/domestic-vrp-consents
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: 
+  x-idempotency-key: 
+  x-jws-signature: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

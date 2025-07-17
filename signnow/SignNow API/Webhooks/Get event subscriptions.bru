@@ -1,0 +1,19 @@
+meta {
+  name: Get event subscriptions
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/api/v2/events
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+}
+
+docs {
+  Gets information about all subscriptions to events made with a specific application
+}

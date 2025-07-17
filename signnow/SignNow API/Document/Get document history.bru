@@ -1,0 +1,19 @@
+meta {
+  name: Get document history
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{url}}/document/{{document_id}}/historyfull
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns the history of a document.
+}

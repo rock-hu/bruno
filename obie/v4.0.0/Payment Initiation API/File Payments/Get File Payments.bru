@@ -1,0 +1,23 @@
+meta {
+  name: Get File Payments
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/file-payments/:FilePaymentId/report-file
+  body: none
+  auth: none
+}
+
+params:path {
+  FilePaymentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

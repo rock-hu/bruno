@@ -1,0 +1,19 @@
+meta {
+  name: Create Events
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

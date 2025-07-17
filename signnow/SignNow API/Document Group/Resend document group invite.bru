@@ -1,0 +1,27 @@
+meta {
+  name: Resend document group invite
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{url}}/documentgroup/{{document_group_id}}/groupinvite/{{invite_id}}/resendinvites
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "email": "test@email.com"
+  }
+}
+
+docs {
+  Resends invite emails to those with pending invites for the group invite. 
+  
+  Resend can also be used to resend invites to a single user if the user’s email is specified in the POST JSON body.
+}

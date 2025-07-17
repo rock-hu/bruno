@@ -1,0 +1,19 @@
+meta {
+  name: Create Account Access Consents
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/account-access-consents
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

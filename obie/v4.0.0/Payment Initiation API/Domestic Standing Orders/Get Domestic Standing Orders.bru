@@ -1,0 +1,23 @@
+meta {
+  name: Get Domestic Standing Orders
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/domestic-standing-orders/:DomesticStandingOrderId
+  body: none
+  auth: none
+}
+
+params:path {
+  DomesticStandingOrderId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

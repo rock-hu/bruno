@@ -1,0 +1,23 @@
+meta {
+  name: Get Domestic Standing Order Consents
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/domestic-standing-order-consents/:ConsentId
+  body: none
+  auth: none
+}
+
+params:path {
+  ConsentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Merge documents
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{url}}/document/merge
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "the merged doc",
+    "document_ids": [
+      "{{document_id}}",
+      "{{document2_id}}"
+    ]
+  }
+}
+
+docs {
+  Merges existing documents into one.
+}

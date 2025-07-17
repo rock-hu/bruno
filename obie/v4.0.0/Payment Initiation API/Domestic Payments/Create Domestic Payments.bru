@@ -1,0 +1,21 @@
+meta {
+  name: Create Domestic Payments
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/domestic-payments
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: 
+  x-idempotency-key: 
+  x-jws-signature: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

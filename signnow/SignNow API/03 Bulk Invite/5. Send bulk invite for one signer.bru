@@ -1,0 +1,38 @@
+meta {
+  name: 5. Send bulk invite for one signer
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{url}}/template/{{template_id}}/bulkinvite
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/x-www-form-urlencoded
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file()
+  client_timestamp: {{$timestamp}}
+  document_name: 1 signer
+  folder_id: 5e59dfb292d9655122a0f6087b26ea9b1af3f752
+  subject: Bulk Invite subject 1 signer
+  email_message: Bulk invite message 1 signer
+}
+
+script:post-response {
+  test("response is ok", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Message contain \"job queued\"", function() {
+      expect(JSON.stringify(res.getBody())).to.include("job queued");
+  });
+}

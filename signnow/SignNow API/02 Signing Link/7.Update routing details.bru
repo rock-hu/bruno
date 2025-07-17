@@ -1,0 +1,41 @@
+meta {
+  name: 7.Update routing details
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{url}}/document/{{template_id}}/template/routing/detail
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+     "template_data":[
+        {
+           "default_email":"",
+           "inviter_role":false,
+           "name":"Signer 1",
+           "role_id":"{{role_id_1}}",
+           "signing_order":1
+        }
+     ],
+     "cc":[],
+     "cc_step":[]
+  }
+}
+
+script:post-response {
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include(bru.getEnvVar("template_id"));
+  });
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Get Offers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:AccountId/offers
+  body: none
+  auth: none
+}
+
+params:path {
+  AccountId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

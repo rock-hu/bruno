@@ -1,0 +1,35 @@
+meta {
+  name: 6.Get role id's for template
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/document/{{template_id}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  var role_1_index, role_2_index;
+  for(var i = 0; i<jsonData.roles.length; ++i){
+      var signerName = jsonData.roles[i].name;
+      if(signerName === 'Signer 1'){
+          role_1_index = i;
+      }
+  }
+  bru.setEnvVar("role_id_1", jsonData.roles[role_1_index].unique_id);
+  test("Status code is 200, template is correct", function () {
+  expect(res.getStatus()).to.equal(200);
+  expect(JSON.stringify(res.getBody())).to.include(bru.getEnvVar("template_id"));
+  });
+}

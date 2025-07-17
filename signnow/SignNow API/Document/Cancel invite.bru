@@ -1,0 +1,19 @@
+meta {
+  name: Cancel invite
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{url}}/document/{{document_id}}/fieldinvitecancel
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Cancels an invite to sign a document.
+}

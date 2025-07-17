@@ -1,0 +1,48 @@
+meta {
+  name: 5. Add field signature
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{url}}/document/{{template_id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+     "fields":[
+        {
+           "x":358,
+           "y":171,
+           "width":177,
+           "height":50,
+           "type":"signature",
+           "page_number":0,
+           "required":true,
+           "role":"Signer 1",
+           "custom_defined_option":false,
+           "name":"signature1"
+        }
+     ],
+     "elements":[
+  
+     ],
+     "client_timestamp":{{$timestamp}}
+  }
+}
+
+script:post-response {
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include(bru.getEnvVar("template_id"));
+  });
+}

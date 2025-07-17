@@ -1,0 +1,28 @@
+meta {
+  name: Get Statements
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:AccountId/statements
+  body: none
+  auth: none
+}
+
+params:query {
+  ~fromStatementDateTime: 
+  ~toStatementDateTime: 
+}
+
+params:path {
+  AccountId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

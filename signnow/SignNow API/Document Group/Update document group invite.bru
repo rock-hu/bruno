@@ -1,0 +1,19 @@
+meta {
+  name: Update document group invite
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{url}}/documentgroup/{{document_group_id}}/groupinvite/{{invite_id}}/invitestep/{{step_id}}/update
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Either replaces invitees for a particular step or updates the invite attributes for a user at a particular step
+}

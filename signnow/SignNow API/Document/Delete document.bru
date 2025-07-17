@@ -1,0 +1,19 @@
+meta {
+  name: Delete document
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{url}}/document/{{document_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Deletes a document from user’s account
+}

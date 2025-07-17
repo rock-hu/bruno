@@ -1,0 +1,15 @@
+meta {
+  name: Delete document group
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{url}}/documentgroup/{{document_group_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

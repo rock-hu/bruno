@@ -1,0 +1,31 @@
+meta {
+  name: Create user
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/user
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"email": "{{username}}",
+  	"password": "{{password}}",
+  	"first_name": "{{name}}",
+  	"last_name": "{{last name}}"
+  }
+}
+
+docs {
+  Creates an account for a user   
+     
+     This endpoint consumes Basic authorization
+}

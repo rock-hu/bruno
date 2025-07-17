@@ -1,0 +1,24 @@
+meta {
+  name: Get document group invite
+  type: http
+  seq: 6
+}
+
+get {
+  url: /document/{{document_group_id}}/groupinvite/{{invite_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns invite action information for a group invite, including the status of each step and action.
+  
+  Here is the list of possible invite action statuses:
+  1. ‘created’: invite or action has been created but is not waiting to be signed
+  2. ‘pending’: emails have been sent out for this invite action or step and are waiting to be viewed or signed
+  3. ‘fulfilled’: actions and steps that have been finished by singing or viewing
+}

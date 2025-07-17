@@ -1,0 +1,39 @@
+meta {
+  name: 3. Send a free form invite
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/document/{{document_id}}/invite
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "document_id": "{{document_id}}",
+      "to": "{{user1}}",
+      "from": "{{user}}",
+      "cc": [
+          "{{user2}}"
+      ],
+      "subject": "Subj {{$timestamp}}",
+      "message": "Message {{$timestamp}}",
+      "on_complete": "document_and_attachments"
+  }
+}
+
+script:post-response {
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include("success");
+  });
+}

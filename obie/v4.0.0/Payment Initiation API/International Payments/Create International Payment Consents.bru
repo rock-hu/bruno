@@ -1,0 +1,21 @@
+meta {
+  name: Create International Payment Consents
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/international-payment-consents
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: 
+  x-idempotency-key: 
+  x-jws-signature: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

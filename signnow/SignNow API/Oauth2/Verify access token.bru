@@ -1,0 +1,19 @@
+meta {
+  name: Verify access token
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/oauth2/token
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Verify an access token for a user
+}

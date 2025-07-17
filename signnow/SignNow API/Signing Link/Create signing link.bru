@@ -1,0 +1,29 @@
+meta {
+  name: Create signing link
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/link
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"document_id": "{{document_id}}"
+  }
+}
+
+docs {
+  Creates a Signing Link for a specific document.
+}

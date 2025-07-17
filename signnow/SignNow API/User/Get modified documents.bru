@@ -1,0 +1,19 @@
+meta {
+  name: Get modified documents
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/user/documentsv2
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns an array of user’s documents that were modified (added fields, texts, signatures, etc.)
+}

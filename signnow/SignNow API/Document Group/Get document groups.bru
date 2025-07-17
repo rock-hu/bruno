@@ -1,0 +1,24 @@
+meta {
+  name: Get document groups
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/user/documentgroups
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns back all document groups the user owns.
+  
+  The call is paginated by last_updated, so offset and limit query parameters are required:
+  
+  1. Limit must be greater than 0 but less than or equal to 50.
+  2. Offset must be 0 or greater.
+}

@@ -1,0 +1,31 @@
+meta {
+  name: 4.Delete document
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{url}}/documents
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+    {"unique_id": "{{document_id}}"}
+  ]
+}
+
+script:post-response {
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include("success");
+  });
+}

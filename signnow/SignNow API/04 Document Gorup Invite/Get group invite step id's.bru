@@ -1,0 +1,25 @@
+meta {
+  name: Get group invite step id's
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{url}}/documentgroup/{{group_id}}/groupinvite/{{group_invite}}
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("group_invite_step_id_1", jsonData.invite.steps[0].id);
+  bru.setEnvVar("group_invite_step_id_2", jsonData.invite.steps[1].id);
+}

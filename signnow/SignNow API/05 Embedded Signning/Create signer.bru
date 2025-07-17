@@ -1,0 +1,25 @@
+meta {
+  name: Create signer
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/user
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"email": "{{signer}}",
+  	"password": "{{password1}}",
+  	"first_name": "",
+  	"last_name": ""
+  }
+}

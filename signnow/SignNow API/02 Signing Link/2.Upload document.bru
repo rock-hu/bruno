@@ -1,0 +1,31 @@
+meta {
+  name: 2.Upload document
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/document
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file()
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("document_id", jsonData.id);
+  test("Status code is 200", function() {
+      expect(expect(res.getStatus()).to.equal(200));
+  });
+}

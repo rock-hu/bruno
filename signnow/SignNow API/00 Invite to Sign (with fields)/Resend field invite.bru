@@ -1,0 +1,24 @@
+meta {
+  name: Resend field invite
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{url}}/fieldinvite/{{field_id_1}}/resend
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  }
+}

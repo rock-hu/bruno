@@ -1,0 +1,15 @@
+meta {
+  name: 11. Deactivate signing link
+  type: http
+  seq: 11
+}
+
+put {
+  url: {{prod_url}}/v2/application/signing-links
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

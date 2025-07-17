@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Events API Specification - ASPSP Endpoints",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

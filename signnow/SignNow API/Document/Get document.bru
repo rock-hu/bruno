@@ -1,0 +1,19 @@
+meta {
+  name: Get document
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/document/{{document_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  This endpoint returns details of specific document
+}

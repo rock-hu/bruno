@@ -1,0 +1,23 @@
+meta {
+  name: Get File Payment Consents
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/file-payment-consents/:ConsentId/file
+  body: none
+  auth: none
+}
+
+params:path {
+  ConsentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

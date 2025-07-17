@@ -1,0 +1,25 @@
+meta {
+  name: Group invite resend
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{url}}/documentgroup/{{group_id}}/groupinvite/{{group_invite}}/resendinvites
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"email":"{{user1}}"
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Send verification email
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/user/verifyemail
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"email": "{{user}}"
+  }
+}
+
+docs {
+  Sends verification email to a user
+}

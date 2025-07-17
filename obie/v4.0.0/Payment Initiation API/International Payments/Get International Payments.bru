@@ -1,0 +1,23 @@
+meta {
+  name: Get International Payments
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/international-payments/:InternationalPaymentId
+  body: none
+  auth: none
+}
+
+params:path {
+  InternationalPaymentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

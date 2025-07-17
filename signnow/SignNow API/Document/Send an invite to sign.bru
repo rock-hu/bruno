@@ -1,0 +1,66 @@
+meta {
+  name: Send an invite to sign
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{url}}/document/{{document_id}}/invite
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "document_id": "{{document_id}}",
+    "to": [
+      {
+        "email": "signer@signnow.com",
+        "role_id": "488d73a3efab032511f144af3a2572a8aae20162",
+        "role": "Signer 1",
+        "order": 1,
+        "reassign": "0",
+        "decline_by_signature": "0",
+        "reminder": 0,
+        "expiration_days": 30,
+        "authentication_type": "password",
+        "password": "123456",
+        "subject": "personalized subject",
+        "message": "personalized message"
+      },
+      {
+        "email": "signer2@signnow.com",
+        "role_id": "",
+        "role": "Signer 2",
+        "order": 2,
+        "reassign": "1",
+        "decline_by_signature": "1",
+        "reminder": 0,
+        "expiration_days": 30
+      }
+    ],
+    "from": "sender@email.com",
+    "cc": [
+      "cc_email@gmail.com",
+      "abnother_cc@gmail.com"
+    ],
+    "subject": "generic subject",
+    "message": "generic message"
+  }
+}
+
+docs {
+  Create and sends an invite to sign a document. 
+  
+  There are 2 types of signature invite:
+  1. Free form invite - for document without fillable fields
+  2. Role-based invite - document has at least one field These 2 types of invite require different payloads
+}

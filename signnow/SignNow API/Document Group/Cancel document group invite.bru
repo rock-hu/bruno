@@ -1,0 +1,21 @@
+meta {
+  name: Cancel document group invite
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/documentgroup/{{document_group_id}}/groupinvite/{{invite_id}}/cancelinvite
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Cancels a group invite. 
+  
+  All documents will be unshared with invitees. Any signatures that occurred before canceling will remain on the documents.
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Download document
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/document/{{document_id}}/download?type=collapsed
+  body: none
+  auth: bearer
+}
+
+params:query {
+  type: collapsed
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Downloads a document
+}

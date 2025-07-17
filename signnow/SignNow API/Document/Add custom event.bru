@@ -1,0 +1,21 @@
+meta {
+  name: Add custom event
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{url}}/document/{{document_id}}/custom_history_event
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Allows developers to add their custom events to the audit log. 
+  
+  For example, if you are using a single SignNow account to make API calls but authenticating multiple people, use this call to add a record to the audit log for that specific document that references the authentication method.
+}

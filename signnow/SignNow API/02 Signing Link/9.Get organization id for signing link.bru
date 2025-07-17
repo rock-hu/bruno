@@ -1,0 +1,28 @@
+meta {
+  name: 9.Get organization id for signing link
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{url}}/user
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/x-www-form-urlencoded
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("org_id", jsonData.organization.id);
+  test("Status code is 200", function() {
+      expect(expect(res.getStatus()).to.equal(200));
+      expect(JSON.stringify(res.getBody())).to.include(bru.getEnvVar("org_id"));
+  });
+}

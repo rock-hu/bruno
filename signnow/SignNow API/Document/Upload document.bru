@@ -1,0 +1,25 @@
+meta {
+  name: Upload document
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/document
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file()
+}
+
+docs {
+  Uploads a file to user’s account and returns unique id of the uploaded document.   
+  
+  Accepts .doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx and .png file types.
+}

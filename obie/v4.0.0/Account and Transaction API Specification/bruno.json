@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Account and Transaction API Specification",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

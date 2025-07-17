@@ -1,0 +1,30 @@
+meta {
+  name: 1. Authorization
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/oauth2/token
+  body: formUrlEncoded
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+  Content-Type: application/x-www-form-urlencoded
+}
+
+body:form-urlencoded {
+  username: {{user}}
+  password: {{password}}
+  grant_type: password
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("token", jsonData.access_token);
+  test("access_token is presented", function () {
+      expect(JSON.stringify(res.getBody())).to.include("access_token");
+  });
+}

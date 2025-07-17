@@ -1,0 +1,19 @@
+meta {
+  name: Delete folder
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{url}}/user/folder/{{folder_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Deletes a folder.
+}

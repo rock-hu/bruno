@@ -1,0 +1,36 @@
+meta {
+  name: Upload document with tags
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{url}}/document/fieldextract
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file()
+  Tags: '''
+    [
+       {
+          "tag_name":"tag 1",
+          "role":"Signer 1",
+          "label":"name",
+          "required":true,
+          "type":"text",
+          "height":15,
+          "width":100
+       }
+    ]
+  '''
+}
+
+docs {
+  Uploads a file that contains [SignNow Text Tags](https://docs.signnow.com/docs/text-tags) . Only .doc, .docx, and .pdf are supported
+}

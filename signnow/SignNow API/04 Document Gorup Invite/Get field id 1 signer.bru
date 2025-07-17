@@ -1,0 +1,26 @@
+meta {
+  name: Get field id 1 signer
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{url}}/document/{{document_id_1}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("field_id_1", jsonData.fields[0].field_id);
+  bru.setEnvVar("field_invite_id_1", jsonData.field_invites[0].id);
+  
+}

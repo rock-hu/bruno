@@ -1,0 +1,23 @@
+meta {
+  name: Get Domestic Payments
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/domestic-payments/:DomesticPaymentId
+  body: none
+  auth: none
+}
+
+params:path {
+  DomesticPaymentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

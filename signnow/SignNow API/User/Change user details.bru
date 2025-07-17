@@ -1,0 +1,33 @@
+meta {
+  name: Change user details
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{url}}/user
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"first_name": "{{updated_name}}",
+  	"last_name": "{{updated_last_name}}",
+  	"password": "{{updated_password}}",
+  	"old_password": "{{old_pass}}",
+  	"logout_all": "true"
+  }
+}
+
+docs {
+  Updates user informaition i.e. first name, last name
+}

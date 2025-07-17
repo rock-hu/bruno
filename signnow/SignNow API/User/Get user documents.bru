@@ -1,0 +1,19 @@
+meta {
+  name: Get user documents
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{url}}/user/documents
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns information of user’s documents that were not modified yet.
+}

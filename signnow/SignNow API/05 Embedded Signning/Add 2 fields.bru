@@ -1,0 +1,59 @@
+meta {
+  name: Add 2 fields
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{url}}/document/{{document_id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "client_timestamp": 1527859375,
+    "fields": [
+      {
+        "page_number": 0,
+        "type": "text",
+        "name": "FieldName",
+        "role": "Signer 1",
+        "required": true,
+        "height": 40,
+        "width": 50,
+        "x": 217,
+        "y": 32
+      },
+      {
+        "page_number": 0,
+        "type": "text",
+        "name": "FieldName2",
+        "role": "Signer 2",
+        "required": true,
+        "height": 40,
+        "width": 50,
+        "x": 260,
+        "y": 60
+      }
+    ]
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include(bru.getEnvVar("document_id"));
+  });
+}

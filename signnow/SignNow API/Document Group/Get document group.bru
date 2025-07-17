@@ -1,0 +1,19 @@
+meta {
+  name: Get document group
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/documentgroup/{{document_group_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns document and roles information for documents in a document group. The invite_id property is null if there is no group invite for the group yet.
+}

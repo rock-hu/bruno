@@ -1,0 +1,72 @@
+meta {
+  name: 6. Add 3 signature fields
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{url}}/document/{{template_id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+     "fields":[
+        {
+           "x":358,
+           "y":171,
+           "width":177,
+           "height":50,
+           "type":"signature",
+           "page_number":0,
+           "required":true,
+           "role":"Signer 1",
+           "custom_defined_option":false,
+           "name":"Signer 1"
+        },
+        {
+           "x":358,
+           "y":287,
+           "width":177,
+           "height":50,
+           "type":"signature",
+           "page_number":0,
+           "required":true,
+           "role":"Signer 2",
+           "custom_defined_option":false,
+           "name":"signature2"
+        },
+         {
+           "x":358,
+           "y":250,
+           "width":177,
+           "height":50,
+           "type":"signature",
+           "page_number":0,
+           "required":true,
+           "role":"Signer 3",
+           "custom_defined_option":false,
+           "name":"signature3"
+        }
+     ],
+     "elements":[
+  
+     ],
+     "client_timestamp":{{$timestamp}}
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}

@@ -1,0 +1,54 @@
+meta {
+  name: Edit document
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{url}}/document/{{document_id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "document_name": "new_name",
+    "fields":[
+      {
+        "x":305,
+        "y":18,
+        "width":122,
+        "height":34,
+        "page_number":0,
+        "role":"Signer 1",
+        "required":true,
+        "type":"signature"
+      },
+      {
+        "x":307,
+        "y":67,
+        "width":60,
+        "height":12,
+        "page_number":0,
+        "label":"a sample label",
+        "role":"Signer 1",
+        "required":true,
+        "type":"text"
+      }
+      ]
+  }
+}
+
+docs {
+  Updates a document by adding/overwriting fields or elements (texts, checks, signatures, hyperlinks, attachments)
+     
+     More details can be found [here](https://docs.signnow.com/reference/oas/document/putdocumentdocumentid)
+}

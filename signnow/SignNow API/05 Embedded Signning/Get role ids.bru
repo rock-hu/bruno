@@ -1,0 +1,44 @@
+meta {
+  name: Get role ids
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/document/{{document_id}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  var role_1_index;
+  var role_2_index;
+  for(var i = 0; i<jsonData.roles.length; ++i){
+      var signerName = jsonData.roles[i].name;
+      if(signerName === 'Signer 1'){
+          role_1_index = i;
+      }
+  }
+  for(var i = 0; i<jsonData.roles.length; ++i){
+      var signerName = jsonData.roles[i].name;
+      if(signerName === 'Signer 2'){
+          role_2_index = i;
+      }
+  }
+  
+  bru.setEnvVar("role_id_1", jsonData.roles[role_1_index].unique_id);
+  bru.setEnvVar("role_id_2", jsonData.roles[role_2_index].unique_id);
+  
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}

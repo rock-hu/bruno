@@ -1,0 +1,31 @@
+meta {
+  name: 3. Make Template
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/template/
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "document_name": "bulkInvite",
+      "document_id": "{{document_id}}"
+  }
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("template_id", jsonData.id);
+}

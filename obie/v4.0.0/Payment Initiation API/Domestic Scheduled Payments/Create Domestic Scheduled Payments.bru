@@ -1,0 +1,21 @@
+meta {
+  name: Create Domestic Scheduled Payments
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/domestic-scheduled-payments
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: 
+  x-idempotency-key: 
+  x-jws-signature: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

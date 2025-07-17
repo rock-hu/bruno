@@ -1,0 +1,24 @@
+meta {
+  name: Cancel group invite
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{url}}/documentgroup/{{group_id}}/groupinvite/{{group_invite}}/cancelinvite
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  }
+}

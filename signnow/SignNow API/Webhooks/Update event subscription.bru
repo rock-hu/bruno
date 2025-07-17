@@ -1,0 +1,43 @@
+meta {
+  name: Update event subscription
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/api/v2/events/{{event_subscription_id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "event": "document.fieldinvite.sent",
+    "entity_id": "63fde884ad755149ff213563de654f9a61a1884c",
+    "action": "callback",
+    "attributes": {
+      "callback": "https://enlvww20vv7m.x.pipedream.net/",
+      "use_tls_12": true,
+      "integration_id": "b98fc00add6b43a606bc527c81eee741bf16a7d8",
+      "docid_queryparam": true,
+      "headers": {
+        "string_head": "test",
+        "int_head": 12,
+        "bool_head": false,
+        "float_head": 12.24
+      }
+    }
+  }
+}
+
+docs {
+  Allows changing an existing event subscription
+}

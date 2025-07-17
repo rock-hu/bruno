@@ -1,0 +1,49 @@
+meta {
+  name: Get field and field invite id
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/document/{{document_id}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  var role_1_index;
+  var role_2_index;
+  
+  for(var i = 0; i<jsonData.field_invites.length; ++i){
+      var signerName = jsonData.field_invites[i].role;
+      if(signerName === 'Signer 1'){
+          role_1_index = i;
+      }
+      if(signerName === 'Signer 2'){
+          role_2_index = i;
+      }
+  }
+  bru.setEnvVar("field_invite_id_1", jsonData.field_invites[role_1_index].id);
+  bru.setEnvVar("field_invite_id_2", jsonData.field_invites[role_2_index].id);
+  
+  for(var i = 0; i<jsonData.fields.length; ++i){
+      var signerName = jsonData.fields[i].role;
+      if(signerName === 'Signer 1'){
+          role_1_index = i;
+      }
+       if(signerName === 'Signer 2'){
+          role_2_index = i;
+      }
+  }
+  bru.setEnvVar("field_id_1", jsonData.fields[role_1_index].field_id);
+  bru.setEnvVar("field_id_2", jsonData.fields[role_2_index].field_id);
+}

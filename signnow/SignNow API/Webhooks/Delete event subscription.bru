@@ -1,0 +1,19 @@
+meta {
+  name: Delete event subscription
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{url}}/api/v2/events/{{event_subscription_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Unsubscribes an external service (callback_url) from specific events of user or document
+}

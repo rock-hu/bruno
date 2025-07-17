@@ -1,0 +1,23 @@
+meta {
+  name: Get International Scheduled Payment Consents Funds Confirmation
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/international-scheduled-payment-consents/:ConsentId/funds-confirmation
+  body: none
+  auth: none
+}
+
+params:path {
+  ConsentId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

@@ -1,0 +1,35 @@
+meta {
+  name: 8.Make document from template
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{url}}/template/{{template_id}}/copy
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"client_timestamp": {{$timestamp}},
+  	"document_name": "Document",
+  	"template_id": "{{template_id}}"
+  }
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("document_id", jsonData.id);
+  test("Status code is 200", function() {
+      expect(expect(res.getStatus()).to.equal(200));
+  });
+}

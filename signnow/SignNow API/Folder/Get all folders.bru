@@ -1,0 +1,19 @@
+meta {
+  name: Get all folders
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/user/folder
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns all folders of a user.
+}

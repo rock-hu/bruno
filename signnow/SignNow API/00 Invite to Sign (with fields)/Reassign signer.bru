@@ -1,0 +1,35 @@
+meta {
+  name: Reassign signer
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{url}}/document/{{document_id}}/invite/reassign/{{field_invite_id_1}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "role_id": "{{role_id_1}}",
+      "email": "{{user3}}",
+      "cc": [],
+      "reassign": 1
+  }
+}
+
+script:post-response {
+  test("Success status, 200", function () {
+      expect(res.getStatus()).to.equal(200);
+      expect(JSON.stringify(res.getBody())).to.include("success");
+  });
+}

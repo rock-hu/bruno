@@ -1,0 +1,35 @@
+meta {
+  name: Creaate folder
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/user/folder
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"name": "test folder",
+  	"parent_id": ""
+  }
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("folder_id", jsonData.id);
+}
+
+docs {
+  Creates a folder for the user.
+}

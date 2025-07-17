@@ -1,0 +1,67 @@
+meta {
+  name: Field Invite
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{url}}/document/{{document_id}}/invite?email=disable
+  body: json
+  auth: bearer
+}
+
+params:query {
+  email: disable
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+     "document_id":"{{document_id}}",
+     "to":[
+        {
+           "email":"{{signer1}}",
+           "role":"Signer 1",
+           "role_id":"{{role_id_1}}",
+           "order":1,
+           "reassign":"1",
+           "decline_by_signature":"1",
+           "reminder": 12,
+           "expiration_days":30,
+           "subject":"Field invite Signer1",
+           "message":"Field invite Signer1"
+        },
+        {
+           "email":"{{signer2}}",
+           "role":"Signer 2",
+           "role_id":"{{role_id_2}}",
+           "order":2,
+           "reassign":"1",
+           "decline_by_signature":"1",
+           "reminder": 12,
+           "expiration_days":30,
+           "subject":"Field invite Signer1",
+           "message":"Field invite Signer1"
+        }
+     ],
+     "from":"{{user}}",
+     "email":"disabled",
+     "cc":[
+     ],
+     "subject":"Field invite with after_reminder",
+     "message":"New message!"
+  }
+}
+
+script:post-response {
+  test("Status success", function() {
+      expect(JSON.stringify(res.getBody())).to.include("success");
+  });
+}

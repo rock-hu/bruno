@@ -1,0 +1,24 @@
+meta {
+  name: Change Event Subscription
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/event-subscriptions/:EventSubscriptionId
+  body: none
+  auth: none
+}
+
+params:path {
+  EventSubscriptionId: 
+}
+
+headers {
+  Authorization: 
+  x-jws-signature: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

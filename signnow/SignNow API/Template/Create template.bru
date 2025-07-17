@@ -1,0 +1,35 @@
+meta {
+  name: Create template
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/template
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"document_id": "{{document_id}}",
+  	"document_name": ""
+  }
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("template_id", jsonData.id);
+}
+
+docs {
+  Creates a template by flattening an existing document.
+}

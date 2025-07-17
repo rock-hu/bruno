@@ -1,0 +1,152 @@
+meta {
+  name: Invite to sign document group
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{url}}/documentgroup/{{document_group_id}}/groupinvite
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "invite_steps": [
+      {
+        "order": 1,
+        "invite_emails": [
+          {
+            "email": "janedoe@barracuda.com",
+            "disabled": 0,
+            "subject": "The subject step1",
+            "message": "The message for step1"
+          },
+          {
+            "email": "test@mailinator.com",
+            "subject": "subject step 1",
+            "message": "message step 1"
+          },
+          {
+            "email": " bob@SignNow.com ",
+            "subject": "@signnow subject step 1",
+            "message": "@signnow message step 1"
+          }
+        ],
+        "invite_actions": [
+          {
+            "email": " janedoe@barracuda.com ",
+            "role_name": "role6",
+            "action": "sign",
+            "document_id": "dd63da6fbe213863626a61d36b0c13ce61e4a2be",
+            "allow_reassign": 0,
+            "authentication": {
+              "type": "password",
+              "value": "abc123"
+            }
+          },
+          {
+            "email": " test@mailinator.com ",
+            "role_name": "role2",
+            "action": "sign",
+            "document_id": "cddc2f79a3873af02ebc1d1ab0d45b2a1a3a2e7b",
+            "allow_reassign": 0
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "invite_emails": [
+          {
+            "email": " janedoe@barracuda.com ",
+            "disabled": 0,
+            "subject": "The subject for step2",
+            "message": "The message for step2"
+          },
+          {
+            "email": " test@mailinator.com ",
+            "subject": "subject step 2",
+            "message": " message step 2"
+          }
+        ],
+        "invite_actions": [
+          {
+            "email": " janedoe@barracuda.com ",
+            "role_name": "role4",
+            "action": "view",
+            "document_id": "dd63da6fbe213863626a61d36b0c13ce61e4a2be",
+            "allow_reassign": 0
+          },
+          {
+            "email": " test@mailinator.com ",
+            "role_name": "role5",
+            "action": "view",
+            "document_id": "dd63da6fbe213863626a61d36b0c13ce61e4a2be",
+            "allow_reassign": 0
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "invite_emails": [
+          {
+            "email": " janedoe@barracuda.com ",
+            "disabled": 0,
+            "subject": "The subject for step3",
+            "message": "The message for step3"
+          },
+          {
+            "email": " test@mailinator.com ",
+            "subject": "subject step 3",
+            "message": "message step 3"
+          }
+        ],
+        "invite_actions": [
+          {
+            "email": " janedoe@barracuda.com ",
+            "role_name": "role1",
+            "action": "sign",
+            "document_id": "cddc2f79a3873af02ebc1d1ab0d45b2a1a3a2e7b",
+            "allow_reassign": 0
+          },
+          {
+            "email": " test@mailinator.com ",
+            "role_name": "role3",
+            "action": "sign",
+            "document_id": "cddc2f79a3873af02ebc1d1ab0d45b2a1a3a2e7b",
+            "allow_reassign": 0
+          }
+        ]
+      }
+    ],
+    "completion_emails": [
+      {
+        "email": " janedoe@barracuda.com ",
+        "disabled": 0,
+        "subject": "The subject COMPLETE ",
+        "message": "The COMPLETE message"
+      },
+      {
+        "email": " test@mailinator.com ",
+        "subject": "COMPLETE subject ",
+        "message": "COMPLETE message"
+      },
+      {
+        "email": "bob@SignNow.com",
+        "subject": "COMPLETED subject ",
+        "message": " message COMPLETED",
+        "disabled": 0
+      }
+    ]
+  }
+}
+
+docs {
+  Creates a multi-step invite for a document group.
+  
+  Each invite step consists of <invite_email> objects that set the email message or can disable emails all together for specific user. Invite steps also are made of the <invite_action> objects that need to be completed before the step is considered complete. Once all the invite_actions are completed, the next step’s invite emails are sent out. When all steps have been completed, completion emails are sent out.
+}

@@ -1,0 +1,39 @@
+meta {
+  name: Create signer's restricted scope token
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/oauth2/token
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+}
+
+body:multipart-form {
+  username: {{signer}}
+  password: {{password}}
+  grant_type: password
+  scope: signer_limited_scope_token document/{{document_id}}
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("restricted_token", jsonData.access_token);
+  
+  test("Token is presented in response", function(){ 
+      expect(JSON.stringify(res.getBody())).to.include("access_token"); 
+  });
+  
+  var document_id = bru.getEnvVar("document_id");
+  var signingURL = "https://eval.signnow.com/dispatch?route=fieldinvite&document_id=" + document_id + "&access_token=" + jsonData.access_token;
+  bru.setEnvVar("full_signning_link", signingURL);
+}
+
+docs {
+  After successful executing of this request **Embedded Signing Link** is saved as environment variabe ***signingURL***
+}

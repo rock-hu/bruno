@@ -1,0 +1,19 @@
+meta {
+  name: Get document out of template
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/template/{{template_id}}/copy
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Creates a new document copy out of template. If a name is not supplied than it will default to the original template name.
+}

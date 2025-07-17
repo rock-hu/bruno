@@ -1,0 +1,28 @@
+meta {
+  name: Get Transactions
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:AccountId/transactions
+  body: none
+  auth: none
+}
+
+params:query {
+  ~fromBookingDateTime: 
+  ~toBookingDateTime: 
+}
+
+params:path {
+  AccountId: 
+}
+
+headers {
+  Authorization: 
+  ~x-fapi-auth-date: 
+  ~x-fapi-customer-ip-address: 
+  ~x-fapi-interaction-id: 
+  ~x-customer-user-agent: 
+}

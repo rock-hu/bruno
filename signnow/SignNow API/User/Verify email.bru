@@ -1,0 +1,27 @@
+meta {
+  name: Verify email
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{url}}/user/email/verify
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Basic {{basic}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"email": "{{user}}",
+  	"verification_token": ""
+  }
+}
+
+docs {
+  Verifies user’s email address using token from verification email
+}

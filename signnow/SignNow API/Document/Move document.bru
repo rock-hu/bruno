@@ -1,0 +1,29 @@
+meta {
+  name: Move document
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/document/{{document_id}}/move
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+  	"folder_id": "{{folder_id}}"
+  }
+}
+
+docs {
+  Moves a document into specified folder
+}

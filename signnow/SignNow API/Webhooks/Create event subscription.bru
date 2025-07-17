@@ -1,0 +1,45 @@
+meta {
+  name: Create event subscription
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/v2/events
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "event": "",
+    "entity_id": "",
+    "action": "callback",
+    "attributes": {
+      "callback": " ",
+      "use_tls_12": true,
+      "integration_id": "Unique ID Integration System",
+      "docid_queryparam": true,
+      "headers": {
+        "string_head": "test",
+        "int_head": 12,
+        "bool_head": false,
+        "float_head": 12.24
+      }
+    }
+  }
+}
+
+docs {
+  Allows to subscribe an external service(callback_url) to a specific event of user or document.
+  
+  Check [this article](https://docs.signnow.com/webhooks/subscriptions) for more details.
+}

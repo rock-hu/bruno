@@ -1,0 +1,94 @@
+meta {
+  name: Group invite
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{url}}/documentgroup/{{group_id}}/groupinvite
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+     "invite_steps":[
+        {
+           "order":1,
+           "invite_emails":[
+              {
+                 "email":"{{user1}}",
+                 "subject":"custom subject",
+                 "message":"custom message",
+                 "expiration_days":30,
+                 "reminder":0
+              },
+              {
+                 "email":"{{user2}}",
+                 "subject":"custom subject",
+                 "message":"custom message",
+                 "expiration_days":30,
+                 "reminder":0
+              }
+           ],
+           "invite_actions":[
+              {
+                 "email":"{{user1}}",
+                 "role_name":"Signer 1",
+                 "action":"sign",
+                 "document_id":"{{document_id_1}}",
+                 "allow_reassign":"0",
+                 "decline_by_signature":"0"
+              },
+              {
+                 "email":"{{user2}}",
+                 "role_name":"Signer 1",
+                 "action":"sign",
+                 "document_id":"{{document_id_2}}",
+                 "allow_reassign":"0",
+                 "decline_by_signature":"0"
+              }
+           ]
+        },
+         {
+           "order":2,
+           "invite_emails":[
+              {
+                 "email":"{{user3}}",
+                 "subject":"custom subject",
+                 "message":"custom message",
+                 "expiration_days":30,
+                 "reminder":0
+              }
+           ],
+           "invite_actions":[
+              {
+                 "email":"{{user3}}",
+                 "role_name":"Signer 1",
+                 "action":"sign",
+                 "document_id":"{{document_id_3}}",
+                 "allow_reassign":"0",
+                 "decline_by_signature":"0"
+              }
+           ]
+        }
+     ],
+     "completion_emails":[
+  	
+     ]
+  }
+}
+
+script:post-response {
+  var jsonData = JSON.parse(responseBody);
+  bru.setEnvVar("group_invite", jsonData.id);
+  
+}
