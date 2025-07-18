@@ -6,7 +6,7 @@ meta {
 
 post {
   url: {{baseUrl}}/domestic-standing-orders
-  body: none
+  body: json
   auth: none
 }
 
@@ -18,4 +18,150 @@ headers {
   ~x-fapi-customer-ip-address: 
   ~x-fapi-interaction-id: 
   ~x-customer-user-agent: 
+}
+
+body:json {
+  {
+    "Data": {
+      "ConsentId": "",
+      "Initiation": {
+        "RemittanceInformation": {
+          "Structured": [
+            {
+              "ReferredDocumentInformation": [
+                {
+                  "Code": "",
+                  "Issuer": "",
+                  "Number": "",
+                  "RelatedDate": "",
+                  "LineDetails": []
+                }
+              ],
+              "ReferredDocumentAmount": 0,
+              "CreditorReferenceInformation": {
+                "Code": "",
+                "Issuer": "",
+                "Reference": ""
+              },
+              "Invoicer": "",
+              "Invoicee": "",
+              "TaxRemittance": "",
+              "AdditionalRemittanceInformation": []
+            }
+          ],
+          "Unstructured": []
+        },
+        "FirstPaymentAmount": {
+          "Amount": "",
+          "Currency": ""
+        },
+        "RecurringPaymentAmount": {
+          "Amount": "",
+          "Currency": ""
+        },
+        "FinalPaymentAmount": {
+          "Amount": "",
+          "Currency": ""
+        },
+        "DebtorAccount": {
+          "SchemeName": "",
+          "Identification": "",
+          "Name": "",
+          "SecondaryIdentification": "",
+          "Proxy": {
+            "Identification": "",
+            "Code": "",
+            "Type": ""
+          }
+        },
+        "CreditorAccount": {
+          "SchemeName": "",
+          "Identification": "",
+          "Name": "",
+          "SecondaryIdentification": "",
+          "Proxy": {}
+        },
+        "UltimateCreditor": {
+          "Name": "",
+          "Identification": "",
+          "LEI": "",
+          "SchemeName": "",
+          "PostalAddress": {
+            "AddressType": "",
+            "Department": "",
+            "SubDepartment": "",
+            "StreetName": "",
+            "BuildingNumber": "",
+            "BuildingName": "",
+            "Floor": "",
+            "UnitNumber": "",
+            "Room": "",
+            "PostBox": "",
+            "TownLocationName": "",
+            "DistrictName": "",
+            "CareOf": "",
+            "PostCode": "",
+            "TownName": "",
+            "CountrySubDivision": "",
+            "Country": "",
+            "AddressLine": []
+          }
+        },
+        "UltimateDebtor": {
+          "Name": "",
+          "Identification": "",
+          "LEI": "",
+          "SchemeName": "",
+          "PostalAddress": {}
+        },
+        "RegulatoryReporting": [
+          {
+            "DebitCreditReportingIndicator": "",
+            "Authority": {
+              "Name": "",
+              "CountryCode": ""
+            },
+            "Details": [
+              {
+                "Type": "",
+                "Date": "",
+                "Country": "",
+                "Amount": {
+                  "Amount": "",
+                  "Currency": ""
+                },
+                "Information": []
+              }
+            ]
+          }
+        ],
+        "MandateRelatedInformation": {
+          "MandateIdentification": "",
+          "Classification": "",
+          "CategoryPurposeCode": "",
+          "FirstPaymentDateTime": "",
+          "RecurringPaymentDateTime": "",
+          "FinalPaymentDateTime": "",
+          "Frequency": {
+            "Type": "",
+            "CountPerPeriod": 0,
+            "PointInTime": ""
+          },
+          "Reason": ""
+        },
+        "SupplementaryData": {}
+      }
+    },
+    "Risk": {
+      "PaymentContextCode": "",
+      "MerchantCategoryCode": "",
+      "MerchantCustomerIdentification": "",
+      "ContractPresentIndicator": false,
+      "BeneficiaryPrepopulatedIndicator": false,
+      "PaymentPurposeCode": "",
+      "CategoryPurposeCode": "",
+      "BeneficiaryAccountType": "",
+      "DeliveryAddress": {}
+    }
+  }
 }

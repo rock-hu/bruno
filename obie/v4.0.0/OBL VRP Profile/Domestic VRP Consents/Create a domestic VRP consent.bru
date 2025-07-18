@@ -6,7 +6,7 @@ meta {
 
 post {
   url: {{baseUrl}}/domestic-vrp-consents
-  body: none
+  body: json
   auth: none
 }
 
@@ -18,4 +18,148 @@ headers {
   ~x-fapi-customer-ip-address: 
   ~x-fapi-interaction-id: 
   ~x-customer-user-agent: 
+}
+
+body:json {
+  {
+    "Data": {
+      "ReadRefundAccount": "",
+      "ControlParameters": {
+        "ValidFromDateTime": "",
+        "ValidToDateTime": "",
+        "MaximumIndividualAmount": {
+          "Amount": "",
+          "Currency": ""
+        },
+        "PeriodicLimits": [
+          {
+            "PeriodType": "",
+            "PeriodAlignment": "",
+            "Amount": "",
+            "Currency": ""
+          }
+        ],
+        "VRPType": [],
+        "PSUAuthenticationMethods": [],
+        "PSUInteractionTypes": [],
+        "SupplementaryData": {}
+      },
+      "Initiation": {
+        "DebtorAccount": {
+          "SchemeName": "",
+          "Identification": "",
+          "Name": "",
+          "SecondaryIdentification": "",
+          "LEI": ""
+        },
+        "CreditorAccount": {
+          "SchemeName": "",
+          "Identification": "",
+          "Name": "",
+          "SecondaryIdentification": "",
+          "Proxy": {
+            "Identification": "",
+            "Code": "",
+            "Type": ""
+          }
+        },
+        "CreditorPostalAddress": {
+          "AddressType": "",
+          "Department": "",
+          "SubDepartment": "",
+          "StreetName": "",
+          "BuildingNumber": "",
+          "BuildingName": "",
+          "Floor": "",
+          "UnitNumber": "",
+          "Room": "",
+          "PostBox": "",
+          "TownLocationName": "",
+          "DistrictName": "",
+          "CareOf": "",
+          "PostCode": "",
+          "TownName": "",
+          "CountrySubDivision": "",
+          "Country": "",
+          "AddressLine": []
+        },
+        "UltimateCreditor": {
+          "Name": "",
+          "Identification": "",
+          "LEI": "",
+          "SchemeName": "",
+          "PostalAddress": {}
+        },
+        "CreditorAgent": {
+          "SchemeName": "",
+          "Identification": "",
+          "Name": "",
+          "PostalAddress": {},
+          "LEI": ""
+        },
+        "UltimateDebtor": {
+          "Name": "",
+          "Identification": "",
+          "LEI": "",
+          "SchemeName": "",
+          "PostalAddress": {}
+        },
+        "RemittanceInformation": {
+          "Structured": [
+            {
+              "ReferredDocumentInformation": [
+                {
+                  "Code": "",
+                  "Issuer": "",
+                  "Number": "",
+                  "RelatedDate": "",
+                  "LineDetails": []
+                }
+              ],
+              "ReferredDocumentAmount": 0,
+              "CreditorReferenceInformation": {
+                "Code": "",
+                "Issuer": "",
+                "Reference": ""
+              },
+              "Invoicer": "",
+              "Invoicee": "",
+              "TaxRemittance": "",
+              "AdditionalRemittanceInformation": []
+            }
+          ],
+          "Unstructured": []
+        },
+        "RegulatoryReporting": [
+          {
+            "DebitCreditReportingIndicator": "",
+            "Authority": {
+              "Name": "",
+              "Country": ""
+            },
+            "Details": [
+              {
+                "Type": "",
+                "Date": "",
+                "Country": "",
+                "Amount": {},
+                "Information": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Risk": {
+      "PaymentContextCode": "",
+      "MerchantCategoryCode": "",
+      "MerchantCustomerIdentification": "",
+      "ContractPresentIndicator": false,
+      "BeneficiaryPrepopulatedIndicator": false,
+      "PaymentPurposeCode": "",
+      "CategoryPurposeCode": "",
+      "BeneficiaryAccountType": "",
+      "DeliveryAddress": {}
+    }
+  }
 }

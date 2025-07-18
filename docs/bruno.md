@@ -1,6 +1,23 @@
 # bruno 
 
+## import collection  
 
+![](./images/bruno-import-collection.png) 
+
+
+## collection 
+![](./images/bruno-collection.png) 
+
+
+## share collection
+![](./images/bruno-share-collection.png) 
+
+
+
+## request
+![](./images/bruno-request.png) 
+
+![](./images/bruno-request-docs.png) 
 
 ## bru  
 

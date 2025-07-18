@@ -6,7 +6,7 @@ meta {
 
 post {
   url: {{baseUrl}}/account-access-consents
-  body: none
+  body: json
   auth: none
 }
 
@@ -16,4 +16,16 @@ headers {
   ~x-fapi-customer-ip-address: 
   ~x-fapi-interaction-id: 
   ~x-customer-user-agent: 
+}
+
+body:json {
+  {
+    "Data": {
+      "Permissions": [],
+      "ExpirationDateTime": "",
+      "TransactionFromDateTime": "",
+      "TransactionToDateTime": ""
+    },
+    "Risk": {}
+  }
 }
